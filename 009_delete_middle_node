@@ -1,0 +1,14 @@
+// Deletes middle of linked list and returns head of the modified list
+Node* deleteMid(Node* head)
+{
+    Node* slow=head;
+    Node* fast=head;
+    Node* temp=NULL;
+    while(fast!=NULL && fast->next!=NULL){
+        temp=slow;
+        slow=slow->next;
+        fast=fast->next->next;
+    }
+    temp->next=slow->next;
+    return head;
+}
